@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="Lab 1" content="Portfolio">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
+    <script type="module" src="test.js"></script>
+    <script type="module" src="contact.js"></script>
 </head>
 
 <body>
@@ -31,8 +33,8 @@
             <div class="text">
                 <h2 id="about-me">About me</h2>
                 <p>Hi! My name is Linnea, I'm 29 years old and currently living in Kalmar while studying to become an Interaction designer. I'm passionate about creating intuitive, meaningful user experiences and enjoy exploring how design can make everyday interactions smoother and more engaging. I'm a curious and creative person who loves solving problems through thoughtgful design. My strenghts lie in understanding user needs, paying attention to details, and turning complex ideas into clear and intuitive solutions. I enjoy combining creativity with structure, and I'm always looking for new ways to grow and improve as a designer.</p>
-            
-        <!--Table-->
+
+                <!--Table-->
                 <table>
                     <tbody>
                         <tr>
@@ -102,16 +104,19 @@
         <!--Fifth section "Contact me" form-->
 
         <section class="contact">
-            <h2 id="contact">Contact me</h2>
-            <form action="mailto:lg223fg@student.lnu.se" method="post">
+            <h2 id="contactMe">Contact me</h2>
+            <form action="mailto:lg223fg@student.lnu.se" method="post" id="contact">
                 <label for="firstname">First name:</label><br>
-                <input type="text" id="firstname" name="firstname" required><br><br>
+                <input type="text" id="firstName" name="firstname" required>
+                <div class="errorMessage"></div><br><br>
 
                 <label for="lastname">Last name:</label><br>
-                <input type="text" id="lastname" name="lastname" required><br><br>
+                <input type="text" id="lastName" name="lastname" required>
+                <div class="errorMessage"></div><br><br>
 
                 <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                <input type="text" id="email" name="email" required>
+                <div id="emailErrorMessage" class="errorMessage"></div><br><br>
 
                 <label for="subject">Subject:</label><br>
                 <select id="subject" name="subject" required>
@@ -119,16 +124,21 @@
                     <option value="project">Project inquiry</option>
                     <option value="job">Job opportunity</option>
                     <option value="question">General question</option>
-                </select><br><br>
+                </select>
+                <div class="errorMessage"></div><br><br>
 
                 <label for="message">Message:</label><br>
-                <textarea name="message" id="message" rows="4" cols="50" required></textarea><br><br>
+                <textarea name="message" id="message" rows="4" cols="50" required></textarea>
+                <div class="errorMessage"></div><br><br>
+
 
                 <div class="formButtons">
                     <input id="send" type="submit" value="Send">
                     <input id="clear" type="reset" value="Clear">
                 </div>
             </form>
+
+            <div id="successMessage"></div>
 
         </section>
     </main>
@@ -150,7 +160,5 @@
     </footer>
 
 </body>
-
-<script type="module" src="test.js"></script>
 
 </html>
