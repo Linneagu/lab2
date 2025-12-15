@@ -152,6 +152,19 @@ textarea:focus, #subject:focus {
     background-color: white;
 }
 
+#charCount {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#charCount.red {
+    color: red;
+}
+
+#charCount.green {
+    color: green;
+}
+
 /*Style the send button*/
 #send, #clear {
     border: 1px solid black;

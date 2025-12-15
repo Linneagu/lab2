@@ -7,7 +7,8 @@ const message = document.getElementById("message");
 const successMessage = document.getElementById("successMessage");
 const emailErrorMessage = document.getElementById("emailErrorMessage")
 
-form.addEventListener("submit", function (event) {
+//Error message for email. 
+form.addEventListener("submit", function (event) { //add event listener when submit the form
     event.preventDefault(); // prevent browsers default form submission
 
     if (!email.value.includes("@")) { //check if the field contains an "@"
@@ -23,11 +24,21 @@ form.addEventListener("submit", function (event) {
     }
 });
 
+//Character counter
 const textarea = document.getElementById("message");
 const charCount = document.getElementById("charCount");
 
-textarea.addEventListener("keyup", function(){
+textarea.addEventListener("keyup", function(){ //add event listener every time you releases a key
     const text = textarea.value; //get the text from texarea
-    const count = text.length; //count number of signs
-    charCount.textContent = "Character count: " + count;
-})
+    const count = text.length; //count the characters
+
+    charCount.textContent = count + `/20 characters `; //update the text content of the character conunter and shows how many out of 20
+
+    charCount.classList.remove("red", "green") //
+
+    if(count <20) { //if character count is below 20, number shows in red
+        charCount.classList.add("red");
+    } else { //outherwise show in green
+        charCount.classList.add("green");
+    }
+});
