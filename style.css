@@ -117,8 +117,9 @@ hr {
 
 form input,
 textarea {
-    border: none; /*Remove default borders*/
+    border: 1px solid #ccc;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
 }
 
 input {
@@ -137,14 +138,15 @@ form label {
 /*Hightlight input and textarea on focus*/
 input:focus,
 textarea:focus {
-    background-color: #e5d9ce;
-    outline: 1px solid black;
+    border: 2px solid blue;
+    outline: none;
 }
 
 /*Style the send button*/
 #send, #clear {
     border: 1px solid black;
-    width: 60px;
+    width: 80px;
+    padding: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 14px;
     background-color: white;
