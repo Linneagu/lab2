@@ -1,0 +1,226 @@
+/*Style for the page*/
+
+body {
+    background-color: #EFE9E3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0 auto; /*Remove broswer defiault margins*/
+}
+
+.container {
+    margin: auto; /*Center the main content*/
+    max-width: 1000px; /*Limits maximum width*/
+    padding-bottom: 64px; /*Space at the bottom*/
+}
+
+/* Styling navbar */
+
+nav {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style the links in navbar*/
+nav a {
+    margin: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+/* Horizontal line under the nav using pseudo-element*/
+nav::after {
+    content: "";
+    display: table; /*So you can center the element*/
+    width: 80%;
+    margin: 0 auto; /* Center the line*/
+    border-bottom: black 1px solid;
+    margin-top: 20px;
+}
+
+.navtext:hover {
+    color: #7a1f1f;
+}
+
+/*Style sections vertically with space between*/
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 64px; /*space between child element*/
+    margin-bottom: 128px;
+}
+
+/*Main heading*/
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: black;
+}
+
+/*Section layout: images and text side by side*/
+.section {
+    display: flex;
+    align-items: center;
+    gap: 10vw; /*Space between image and text*/
+}
+
+.section img {
+    border-radius: 20px; /*Rounded corners for images*/
+}
+
+/*Text content layout inside section*/
+.text {
+    display: flex;
+    flex-direction: column; /*Make the element vertically*/
+    margin-bottom: auto; /*Push text to top if container grows*/
+}
+
+/*Style tabel*/
+table {
+    border-collapse: collapse; /*Removes double borders between cells*/
+    width: 400px;
+    margin: 20px 0; /*Space above and below the table*/
+}
+
+/*Style table headers and cells*/
+th,
+td {
+    border: 1px solid black;
+    background-color: rgb(252, 250, 245);
+    padding: 10px 10px; /*Space inside cells*/
+    text-align: left; /*Align text to the left*/
+    height: 40px; /*Row height*/
+}
+
+/*Style unordered list*/
+ul {
+    padding-left: 0; /*Remove default padding*/
+    list-style-position: inside; /*Place pullet points inside the list box*/
+}
+
+ul li {
+    margin-bottom: 5px; /*Space between list items*/
+}
+
+/*Style horizontal line*/
+hr {
+    border: none; /*Removes default border*/
+    border-top: 1px solid black;
+    height: 1px;
+    width: 100%; /*Make the line the full container width*/
+}
+
+/*Style contact form*/
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+form input,
+textarea {
+    border: none; /*Remove default borders*/
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input {
+    width: 250px;
+    height: 25px;
+}
+
+textarea {
+    height: 100px;
+}
+
+form label {
+    font-size: 16px;
+}
+
+/*Hightlight input and textarea on focus*/
+input:focus,
+textarea:focus {
+    background-color: #e5d9ce;
+    outline: 1px solid black;
+}
+
+/*Style the send button*/
+#send {
+    border: 1px solid black;
+    width: 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer; /*Pointer on hover*/
+}
+
+/*Buton hover effect*/
+#send:hover {
+    background-color: #e5d9ce;
+}
+
+/* Styling footer*/
+
+footer {
+    background-color: #e5d9ce;
+}
+
+.footer {
+    font-style: italic;
+    display: flex; /*Make the elements in a row*/
+    justify-content: space-between; /*Spread itmes across the row*/
+    padding: 32px 0 8px 0; /*Top, right, bottom, left padding*/
+}
+
+#privacyterms, #copyright {
+    align-self: flex-end; /*Move item to the bottom*/
+}
+
+/* Media queries for mobile*/
+
+@media (max-width: 600px) { /*Responsive styles for screens 600px wide or smaller*/
+
+    nav {
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    nav::after {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    main {
+        padding: 16px;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .section {
+        flex-direction: column; /*Column layout insted of row*/
+        gap: 5vw; /*Responsive spacing*/
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    table {
+        margin: 20px auto; /*Center table*/ 
+    }
+
+    form {
+        margin: 0 auto; /*Center form*/
+        width: 70%;
+    }
+
+    footer {
+        padding: 16px;
+        font-size: 12px;
+    }
+}
