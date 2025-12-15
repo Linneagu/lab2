@@ -142,7 +142,7 @@ textarea:focus {
 }
 
 /*Style the send button*/
-#send {
+#send, #clear {
     border: 1px solid black;
     width: 60px;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -153,7 +153,7 @@ textarea:focus {
 }
 
 /*Buton hover effect*/
-#send:hover {
+#send:hover, #clear:hover {
     background-color: #e5d9ce;
 }
 
