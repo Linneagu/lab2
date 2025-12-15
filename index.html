@@ -1,3 +1,142 @@
-<script>
-    console.log("Hello World")
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Lab 1" content="Portfolio">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <!--Navbar-->
+        <nav>
+            <a href="#about-me" class="navtext">About me</a>
+            <a href="#biography" class="navtext">Biography</a>
+            <a href="#interests" class="navtext">Interests</a>
+            <a href="#goals" class="navtext">Goals</a>
+            <a href="#contact" class="navtext">Contact</a>
+            <a href="https://www.linkedin.com/" target="_blank" class="navtext">Link</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <h1>Linneas Portfolio</h1>
+
+        <!--First section, "About me"-->
+
+        <section class="section">
+            <div class="text">
+                <h2 id="about-me">About me</h2>
+                <p>Hi! My name is Linnea, I'm 29 years old and currently living in Kalmar while studying to become an Interaction designer. I'm passionate about creating intuitive, meaningful user experiences and enjoy exploring how design can make everyday interactions smoother and more engaging. I'm a curious and creative person who loves solving problems through thoughtgful design. My strenghts lie in understanding user needs, paying attention to details, and turning complex ideas into clear and intuitive solutions. I enjoy combining creativity with structure, and I'm always looking for new ways to grow and improve as a designer.</p>
+            
+        <!--Table-->
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>City</th>
+                            <td>Kalmar</td>
+                        </tr>
+                        <tr>
+                            <th>Age</th>
+                            <td>29</td>
+                        </tr>
+                        <tr>
+                            <th>Education</th>
+                            <td>Interaction Designer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <img src="img/Smilla.jpeg" alt="My cat that are sleeping" width="200">
+
+        </section>
+
+        <hr />
+
+        <!--Second section "Biography"-->
+
+        <section class="section">
+            <img src="img/utsikt.jpeg" alt="View of a beutiful sky from my apartment" width="200">
+            <div class="text">
+                <h2 id="biography">Biography</h2>
+                <p>I was born and raised in a small town in Småland, and when I was 11 years old my family had to move to Halmstad. It's a moment I remember very clearly in many different ways. I grew up in a house with a large garden, and suddenly we were moving to a much bigger city and into an apartment right in the city center. It was a bog change that felt both difficult and exciting. I ended up living in Halmstad unbtil I was 26 years old, when I deceided to move to Kalmar where I currently live. </p>
+            </div>
+
+        </section>
+
+        <hr />
+
+        <!--Third section "Interests"-->
+
+        <section class="section">
+            <div class="text">
+                <h2 id="interests">Academic interests and hobbies</h2>
+                <p>I've always been a very creative person, and as a child I loved crafting and making things by hand. That interest later grew into a passion for photography and photo editing. I studied media with focus on photography in gymnasiet, wich gave me even more opportunities to express my creativity. When I started working after school, I realized that I really missed having a creative element in my daily life. After moving to Kalmar, I discovered the Interaction design program at Linneus University, and it felt like the perfect fit for me. Interaction design also feels very relevant today, it allows you to create meningful and accessible design that makes life easier for users and that works for everyone. During the first year of my progtam I took a course in HTML and CSS, and i became more intrested in coding. Since then, I've wanted to develop my coding skills, as I see it as a valuable complement to my knowledge in design.</p>
+                <h3>Interests</h3>
+                <ul>
+                    <li>Photography</li>
+                    <li>Design</li>
+                    <li>Coding</li>
+                </ul>
+            </div>
+            <img src="img/rosablommor.jpeg" alt="pink flowers with blue sky in the background" width="200">
+
+        </section>
+
+        <hr />
+
+        <!--Forth section "Goals"-->
+
+        <section>
+            <h2 id="goals">Future goals</h2>
+            <p>One of my future goals is to work as an Interaction designer focusing on creating accessible and inclusive design experiences. Accessibility is imoprtant to me because good design should work for everyone, regardless of their abilities, background, or level of technical experience. I want to be part of creating solutions that makes everyday life easier and more intuitive for all users.</p>
+
+        </section>
+
+        <hr />
+
+        <!--Fifth section "Contact me"-->
+
+        <section class="contact">
+            <h2 id="contact">Contact me</h2>
+            <form action="mailto:lg223fg@student.lnu.se" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea name="message" id="message" rows="4" cols="50" required></textarea><br><br>
+
+                <input id="send" type="submit" value="Send">
+            </form>
+
+        </section>
+    </main>
+
+    <!--Footer-->
+
+    <footer>
+        <div class="container footer">
+            <div id="contactinfo">
+                <h3>Contact information</h3>
+                <p>E-mail: mail@mail.com</p>
+                <p>Phone number: 070 123 45 67</p>
+            </div>
+
+            <p id="privacyterms">Privacy terms</p>
+
+            <p id="copyright">© 2025 - Linnea Gundén</p>
+        </div>
+    </footer>
+
+</body>
+
+<script type="module" src="test.js"></script>
+
+</html>
