@@ -17,6 +17,15 @@ const successMessage = document.getElementById("successMessage");
 // HTML element for showing character count of textarea
 const charCount = document.getElementById("charCount");
 
+function showError(message, element) {
+    element.textContent = message
+    element.style.color = "red"
+}
+
+function clearError(element) {
+    element.textContent = ""
+}
+
 function validateEmail(inputElement, errorElement) {
     const value = inputElement.value.trim();
 
@@ -50,6 +59,10 @@ formField.addEventListener("submit", function (event) {
 
     const emailValid = validateEmail(emailInput, emailError);
     const messageValid = validateMessage(messageTextarea, messageError);
+
+    if (!emailValid || !messageValid) {
+        return;
+    }
 
     successMessage.textContent = `Thank you, ${firstNameInput.value}! I will contact you soon.`;
     successMessage.style.color = "green";
