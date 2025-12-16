@@ -29,6 +29,18 @@ function validateEmail(inputElement, errorElement) {
     return true;
 }
 
+function validateMessage(inputElement, errorElement) {
+    const value = inputElement.value.trim();
+
+    if (value.length < 20) {
+        showError("Message must be at least 20 characters", errorElement);
+        return false;
+    }
+
+    clearError(errorElement);
+    return true;
+}
+
 function clearForm() {
 
 }
@@ -37,6 +49,7 @@ formField.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const emailValid = validateEmail(emailInput, emailError);
+    const messageValid = validateMessage(messageTextarea, messageError);
 
     successMessage.textContent = `Thank you, ${firstNameInput.value}! I will contact you soon.`;
     successMessage.style.color = "green";
