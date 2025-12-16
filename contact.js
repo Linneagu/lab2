@@ -26,6 +26,19 @@ function clearError(element) {
     element.textContent = ""
 }
 
+function validateName(inputElement, errorElement) {
+    const value = inputElement.value.trim()
+    const regex = /^[A-Za-z]+$/;
+
+    if (!regex.test(value)) {
+        showError("Only letters allowed", errorElement);
+        return false;
+    }
+
+    clearError(errorElement);
+    return true;
+}
+
 function validateEmail(inputElement, errorElement) {
     const value = inputElement.value.trim();
 
@@ -57,10 +70,12 @@ function clearForm() {
 formField.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    const firstValid = validateName(firstNameInput, firstNameError);
+    const lastValid = validateName(lastNameInput, lastNameError);
     const emailValid = validateEmail(emailInput, emailError);
     const messageValid = validateMessage(messageTextarea, messageError);
 
-    if (!emailValid || !messageValid) {
+    if (!firstValid || !lastValid || !emailValid || !messageValid) {
         return;
     }
 
