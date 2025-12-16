@@ -106,17 +106,18 @@
         <section class="contact">
             <h2 id="contactMe">Contact me</h2>
             <form action="mailto:lg223fg@student.lnu.se" method="post" id="contact">
+
                 <label for="firstname">First name:</label><br>
                 <input type="text" id="firstName" name="firstname" required>
-                <div class="errorMessage"></div><br><br>
+                <p class="errorMessage" id="firstNameError"></p><br><br>
 
                 <label for="lastname">Last name:</label><br>
                 <input type="text" id="lastName" name="lastname" required>
-                <div class="errorMessage"></div><br><br>
+                <p class="errorMessage" id="lastNameError"></p><br><br>
 
                 <label for="email">E-mail:</label><br>
                 <input type="text" id="email" name="email" required>
-                <div id="emailErrorMessage" class="errorMessage"></div><br><br>
+                <p class="errorMessage" id="emailErrorMessage"></p><br><br>
 
                 <label for="subject">Subject:</label><br>
                 <select id="subject" name="subject" required>
@@ -130,7 +131,7 @@
                 <label for="message">Message:</label><br>
                 <textarea name="message" id="message" rows="4" cols="50" required></textarea>
                 <div id="charCount">0/20 characters</div>
-                <div class="errorMessage"></div><br><br>
+                <p class="errorMessage" id="messageError"></p><br><br>
 
 
                 <div class="formButtons">
@@ -139,7 +140,7 @@
                 </div>
             </form>
 
-            <div id="successMessage"></div>
+            <p id="successMessage"></p>
 
         </section>
     </main>

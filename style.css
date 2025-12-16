@@ -157,18 +157,6 @@ textarea:focus, #subject:focus {
     margin-top: 5px;
 }
 
-.red {
-    color: red;
-}
-
-.green {
-    color: green;
-}
-
-.base {
-    color: black;
-}
-
 /*Style the send button*/
 #send, #clear {
     border: 1px solid black;
