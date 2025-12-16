@@ -17,6 +17,8 @@ const successMessage = document.getElementById("successMessage");
 // HTML element for showing character count of textarea
 const charCount = document.getElementById("charCount");
 
+const clearButton = document.getElementById("clear")
+
 function showError(message, element) {
     element.textContent = message
     element.style.color = "red"
@@ -64,7 +66,23 @@ function validateMessage(inputElement, errorElement) {
 }
 
 function clearForm() {
+    formField.reset();
 
+    clearError(firstNameError);
+    clearError(lastNameError);
+    clearError(emailError);
+    clearError(messageError);
+
+    firstNameInput.classList.remove("error", "valid");
+    lastNameError.classList.remove("error", "valid");
+    emailInput.classList.remove("error", "valid");
+    messageTextarea.classList.remove("error", "valid");
+    subjectSelect.classList.remove("error", "valid");
+
+    charCount.textContent = "0/20 characters";
+    charCount.style.color = "black";
+
+    successMessage.textContent = "";
 }
 
 formField.addEventListener("submit", function (event) {
@@ -86,10 +104,7 @@ formField.addEventListener("submit", function (event) {
         successMessage.textContent = "";
     }, 3000);
 
-    formField.reset();
-
-    charCount.textContent = "0/20 characters";
-    charCount.style.color = "black";
+    clearForm();
 })
 
 messageTextarea.addEventListener("keyup", function () {
@@ -102,3 +117,5 @@ messageTextarea.addEventListener("keyup", function () {
         charCount.style.color = "green"
     }
 });
+
+clearButton.addEventListener("click", clearForm);
