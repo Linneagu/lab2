@@ -238,13 +238,17 @@ footer {
 
 @media (max-width: 600px) { /*Responsive styles for screens 600px wide or smaller*/
 
-    nav {
+     nav {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 10px;
-        text-align: center;
+        
     }
 
     nav a {
-        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+        font-size: 20px;
     }
 
     nav::after {
@@ -279,8 +283,12 @@ footer {
         width: 70%;
     }
 
+    #successMessage {
+        text-align: center;
+    }
+
     footer {
-        padding: 16px;
-        font-size: 12px;
+        padding: 10px;
+        font-size: 14px;
     }
 }
