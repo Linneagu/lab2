@@ -105,34 +105,42 @@
 
         <section class="contact">
             <h2 id="contactMe">Contact me</h2>
-            <form action="mailto:lg223fg@student.lnu.se" method="post" id="contact">
+            <form id="contact">
 
-                <label for="firstname">First name:</label><br>
-                <input type="text" id="firstName" name="firstname" required>
-                <p class="errorMessage" id="firstNameError"></p><br><br>
+                <div>
+                    <label for="firstName">First name:</label><br>
+                    <input type="text" id="firstName" name="firstname" required>
+                    <p class="errorMessage hidden" id="firstNameError"></p>
+                </div>
 
-                <label for="lastname">Last name:</label><br>
-                <input type="text" id="lastName" name="lastname" required>
-                <p class="errorMessage" id="lastNameError"></p><br><br>
+                <div>
+                    <label for="lastName">Last name:</label><br>
+                    <input type="text" id="lastName" name="lastname" required>
+                    <p class="errorMessage hidden" id="lastNameError"></p>
 
-                <label for="email">E-mail:</label><br>
-                <input type="text" id="email" name="email" required>
-                <p class="errorMessage" id="emailErrorMessage"></p><br><br>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label><br>
+                    <input type="text" id="email" name="email" required>
+                    <p class="errorMessage hidden" id="emailErrorMessage"></p>
+                </div>
+                <div>
+                    <label for="subject">Subject:</label><br>
+                    <select id="subject" name="subject">
+                        <option value="">--Select subject--</option>
+                        <option value="project">Project inquiry</option>
+                        <option value="job">Job opportunity</option>
+                        <option value="question">General question</option>
+                    </select>
+                    <p class="errorMessage hidden" id="subjectError"></p>
+                </div>
+                <div>
+                    <label for="message">Message:</label><br>
+                    <textarea name="message" id="message" rows="4" cols="50" required></textarea>
+                    <div id="charCount">0/20 characters</div>
+                    <p class="errorMessage hidden" id="messageError"></p>
 
-                <label for="subject">Subject:</label><br>
-                <select id="subject" name="subject" required>
-                    <option value="">--Select subject--</option>
-                    <option value="project">Project inquiry</option>
-                    <option value="job">Job opportunity</option>
-                    <option value="question">General question</option>
-                </select>
-                <p class="errorMessage" id="subjectError"></p><br><br>
-
-                <label for="message">Message:</label><br>
-                <textarea name="message" id="message" rows="4" cols="50" required></textarea>
-                <div id="charCount">0/20 characters</div>
-                <p class="errorMessage" id="messageError"></p><br><br>
-
+                </div>
 
                 <div class="formButtons">
                     <input id="send" type="submit" value="Send">
@@ -140,7 +148,7 @@
                 </div>
             </form>
 
-            <p id="successMessage"></p>
+            <p id="successMessage" class="hidden"></p>
 
         </section>
     </main>
