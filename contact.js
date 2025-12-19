@@ -26,7 +26,6 @@ function showError(message, inputElement, errorElement) {
     errorElement.classList.remove("hidden");
     errorElement.style.color = "red";
     inputElement.classList.add("error");
-    inputElement.classList.remove("valid")
 }
 
 function clearError(inputElement, errorElement) {
@@ -50,6 +49,14 @@ function validateName(inputElement, errorElement) {
     return true;
 }
 
+firstNameInput.addEventListener("input", () => {
+    validateName(firstNameInput, firstNameError);
+})
+
+lastNameInput.addEventListener("input", () => {
+    validateName(lastNameInput, lastNameError);
+})
+
 function validateEmail(inputElement, errorElement) {
     const value = inputElement.value.trim();
 
@@ -62,6 +69,10 @@ function validateEmail(inputElement, errorElement) {
     return true;
 }
 
+emailInput.addEventListener("input", () => {
+    validateEmail(emailInput, emailError);
+})
+
 function validateSubject(inputElement, errorElement) {
     if (inputElement.value === "") {
         showError("Please choose a subject", inputElement, errorElement);
@@ -72,6 +83,10 @@ function validateSubject(inputElement, errorElement) {
     inputElement.classList.add("valid")
     return true;
 }
+
+subjectSelect.addEventListener("change", () => {
+    validateSubject(subjectSelect, subjectError)
+})
 
 function validateMessage(inputElement, errorElement) {
     const value = inputElement.value.trim();
@@ -128,14 +143,16 @@ formField.addEventListener("submit", function (event) {
     }, 3000);
 })
 
-messageTextarea.addEventListener("keyup", function () {
+messageTextarea.addEventListener("input", function () {
     const count = messageTextarea.value.length;
     charCount.textContent = `${count}/20 characters`;
 
     if (count < 20) {
         charCount.style.color = "red";
+        validateMessage(messageTextarea, messageError);
     } else {
         charCount.style.color = "green"
+        validateMessage(messageTextarea, messageError);
     }
 });
 
