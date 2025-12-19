@@ -179,11 +179,13 @@ textarea:focus,
     font-size: 11px;
     color: red;
     margin-top: 5px;
+    opacity: 1;
     transition: opacity 0.3s ease-in-out;
 }
 
 .hidden {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 /*Style the send button*/
