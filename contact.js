@@ -100,6 +100,19 @@ function validateMessage(inputElement, errorElement) {
     return true;
 }
 
+messageTextarea.addEventListener("input", function () {
+    const count = messageTextarea.value.length;
+    charCount.textContent = `${count}/20 characters`;
+
+    if (count < 20) {
+        charCount.style.color = "red";
+        validateMessage(messageTextarea, messageError);
+    } else {
+        charCount.style.color = "green"
+        validateMessage(messageTextarea, messageError);
+    }
+});
+
 function clearForm() {
     formField.reset();
 
@@ -142,18 +155,5 @@ formField.addEventListener("submit", function (event) {
         clearForm();
     }, 3000);
 })
-
-messageTextarea.addEventListener("input", function () {
-    const count = messageTextarea.value.length;
-    charCount.textContent = `${count}/20 characters`;
-
-    if (count < 20) {
-        charCount.style.color = "red";
-        validateMessage(messageTextarea, messageError);
-    } else {
-        charCount.style.color = "green"
-        validateMessage(messageTextarea, messageError);
-    }
-});
 
 clearButton.addEventListener("click", clearForm);
