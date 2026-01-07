@@ -102,8 +102,8 @@ subjectSelect.addEventListener("change", () => {
 function validateMessage(inputElement, errorElement) {
     const value = inputElement.value.trim();
 
-    if (value.length < 20) {
-        showError("Message must be at least 20 characters", inputElement, errorElement);
+    if (value.length >40) {
+        showError("Message must be max 40 characters", inputElement, errorElement);
         return false;
     }
 
@@ -114,9 +114,9 @@ function validateMessage(inputElement, errorElement) {
 // Uppdates character counter and validates message in real time
 messageTextarea.addEventListener("input", function () {
     const count = messageTextarea.value.length;
-    charCount.textContent = `${count}/20 characters`;
+    charCount.textContent = `${count}/40 characters`;
 
-    if (count < 20) {
+    if (count >40) {
         charCount.style.color = "red";
         validateMessage(messageTextarea, messageError);
     } else {
@@ -142,7 +142,7 @@ function clearForm() {
     messageTextarea.classList.remove("error", "valid");
     
 
-    charCount.textContent = "0/20 characters";
+    charCount.textContent = "0/40 characters";
     charCount.style.color = "black";
 }
 
